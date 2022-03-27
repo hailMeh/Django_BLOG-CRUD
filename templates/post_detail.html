@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block title %}<title>Post_Details</title>{% endblock %}
+{% block content %}
+    <div class="basis-2/4 text-xl bg-red-200 h-24 text-center py-2 font-bold">Номер сообщения -  {{ object.title }}</div>
+    <div class="basis-2/4 text-xl underline bg-yellow-200 h-24 text-center py-2">Автор поста -  {{ object.author }}</div>
+{% endblock %}
