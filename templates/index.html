@@ -2,12 +2,22 @@
 {% block title %}<title>MainPage</title>{% endblock %}
 {% block content %}
     {% for m in object_list %}
-        <a href="{% url 'post-details' m.pk %}"
+        <a href="{% url 'post_details' m.pk %}"
            class="basis-2/12 text-2xl text-center bg-red-200 border-b-2 border-black"><p
         >Number - {{ m.title }}</p>
         </a>
         <p class="basis-2/12 bg-blue-200 text-center font-bold border-b-2 border-black">Author - {{ m.author }}</p>
-        <p class="basis-8/12 text-xl text-center bg-indigo-200 border-b-2 border-black p-2 text-sm">Text
+        <p class="basis-6/12 text-xl text-center bg-indigo-200 border-b-2 border-black p-2">Text
             - {{ m.body }}</p>
+        <div class="basis-2/12 flex flex-col items-center bg-indigo-200 border-b-2 border-black justify-center gap-1">
+            <a href="{% url 'post_edit' m.pk %}"
+               class="text-sm font-bold bg-yellow-200 border-2 border-black p-2 hover:text-white rounded-xl">
+                Изменить
+            </a>
+        <a href="{% url 'post_delete' m.pk %}"
+               class="text-sm font-bold bg-red-200 border-2 border-black p-2 hover:text-white rounded-xl">
+                Удалить
+            </a>
+        </div>
     {% endfor %}
 {% endblock %}
