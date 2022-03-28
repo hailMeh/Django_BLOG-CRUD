@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}<title>Login</title>{% endblock %}
+{% block content %}
+    <div class="basis-full flex flex-col items-center bg-red-100">
+        <h1 class="text-4xl font-size bold py-4">Login</h1>
+        <form action="" method="post" class="bg-blue-200 p-2 m-2 rounded-xl text-sm font-bold">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="bg-yellow-200 rounded-xl cursor-pointer p-2 m-4 hover:bg-yellow-400">
+                Log in
+            </button>
+        </form>
+    </div>
+{% endblock %}

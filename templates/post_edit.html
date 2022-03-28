@@ -5,7 +5,7 @@
         <h1 class="text-4xl font-size bold underline py-4">Edit post</h1>
         <form action="" method="post" class="bg-blue-200 p-2 m-2 rounded-xl text-sm font-bold">
             {% csrf_token %}
-            {{ form.as_p }}
+            {{ form.as_ul }}
             <input type="submit" value="Update"
                    class="bg-yellow-200 rounded-xl cursor-pointer p-2 m-4 hover:bg-yellow-400">
         </form>
