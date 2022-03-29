@@ -15,6 +15,6 @@ class Post(models.Model):
 
     # Настраивает редирект данной модели - первый арг куда редирект, второй с какими параметрами,
     # юзать вместо {% url /post_details/<int:pk>/ %}. Нужен только с манипуляциями над БД, в остальном обычное url
-    # при удалении views.py -> succsess_url = reverse_lazy('')
+    # при удалении views.py -> succsess_url = reverse_lazy('') для исполнения в конце
     def get_absolute_url(self):
         return reverse('post_details', args=[str(self.id)])
